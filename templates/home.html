@@ -1,0 +1,44 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8 text-center">
+        <h1 class="display-4 mb-4">Welcome to Flask Login System</h1>
+        
+        {% if current_user.is_authenticated %}
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="card-title">Hello, {{ current_user.username }}!</h3>
+                    <p class="card-text">You are already logged in.</p>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">Go to Dashboard</a>
+                </div>
+            </div>
+        {% else %}
+            <p class="lead mb-4">A simple authentication system built with Flask.</p>
+            
+            <div class="row mt-5">
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Login</h3>
+                            <p class="card-text">Already have an account?</p>
+                            <a href="{{ url_for('login') }}" class="btn btn-primary">Login Here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Register</h3>
+                            <p class="card-text">New user? Create an account.</p>
+                            <a href="{{ url_for('register') }}" class="btn btn-success">Register Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
