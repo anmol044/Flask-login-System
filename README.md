@@ -131,5 +131,6 @@ This project is for **educational purposes**. Feel free to modify and extend it.
 ---
 
 ### 👨‍💻 Author
+ANMOL GUPTA
 
-**Stavan Katrojwar**
+
